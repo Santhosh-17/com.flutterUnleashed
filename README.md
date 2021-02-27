@@ -12,7 +12,7 @@ code, is used by developers and organizations around the world, and is free
 and open source.
 
 
-  <h3 align="center" style="background-color:powderblue;">Flutter Examples</h3>
+  <h3 align="center" style="color:blue;" >Flutter Examples</h3>
 
   <p align="center">
     Example app with Flutter 
