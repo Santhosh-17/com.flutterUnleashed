@@ -18,7 +18,9 @@ and open source.
   <p align="center">
     Example app with Flutter 
     <br>
-    Base project made with much Curiosity to explore flutter and It contains src Images, main-dart file, and yaml file! 
+    Base project made with much Curiosity to explore flutter by the use of flutter course taken by angela.
+    <br>
+    It contains src Images, main-dart file, and yaml file! 
     <br>
     <br>
    
