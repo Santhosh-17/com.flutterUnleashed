@@ -20,7 +20,7 @@ and open source.
     <br>
     Base project made with much Curiosity to explore flutter by the use of flutter course taken by angela.
     <br>
-    It contains src Images, main-dart file, and yaml file! 
+    This repo contains src Images, main-dart file, and yaml file! 
     <br>
     <br>
    
