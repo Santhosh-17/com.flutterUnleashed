@@ -6,11 +6,12 @@
   <h1 align="center">Flutter</h1>
   <br>
   
+  <p align="center">
   Flutter is Google's SDK for crafting beautiful, fast user experiences for
 mobile, web, and desktop from a single codebase. Flutter works with existing
 code, is used by developers and organizations around the world, and is free
 and open source.
-
+</p>
 
   <h3 align="center" style="color:blue;" >Flutter Examples</h3>
 
