@@ -66,7 +66,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 15.0),
             child: FlatButton(
               onPressed: (){
-
+                
               },
               child: Text('True',
               style: TextStyle(
@@ -99,8 +99,6 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
         ),
-
-
       ],
     );
   }
