@@ -41,7 +41,12 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
 
   List<Icon> scoreKeeper = [];
-
+  List<String> questions = [
+    'The Captain of India Cricket Team is Virat Kohli',
+    'England won the series against India in 2021',
+    'Washington Sundar once again missed his maiden century',
+  ];
+  int queNo = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -52,7 +57,8 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Center(
-                child: Text('The Captain of India Cricket Team is Virat Kohli',
+                child: Text(
+                  questions[queNo],
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 22.0,
@@ -70,6 +76,7 @@ class _QuizPageState extends State<QuizPage> {
             child: FlatButton(
               onPressed: (){
                 setState(() {
+                  queNo++;
                   scoreKeeper.add(
                     Icon(
                       Icons.check,
@@ -97,6 +104,7 @@ class _QuizPageState extends State<QuizPage> {
             child: FlatButton(
               onPressed: (){
                 setState(() {
+                  queNo++;
                   scoreKeeper.add(
                     Icon(
                       Icons.close,
