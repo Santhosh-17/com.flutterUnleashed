@@ -46,6 +46,7 @@ class _QuizPageState extends State<QuizPage> {
     'England won the series against India in 2021',
     'Washington Sundar once again missed his maiden century',
   ];
+  List<bool> ans = [true,false,true];
   int queNo = 0;
   @override
   Widget build(BuildContext context) {
@@ -75,15 +76,28 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 15.0),
             child: FlatButton(
               onPressed: (){
-                setState(() {
-                  queNo++;
-                  scoreKeeper.add(
-                    Icon(
-                      Icons.check,
-                      color: Colors.green,
-                    )
-                  );
-                });
+                if(ans[queNo] == true){
+                  setState(() {
+                    queNo++;
+                    scoreKeeper.add(
+                        Icon(
+                          Icons.check,
+                          color: Colors.green,
+                        )
+                    );
+                  });
+                }else{
+                  setState(() {
+                    queNo++;
+                    scoreKeeper.add(
+                        Icon(
+                          Icons.close,
+                          color: Colors.red,
+                        )
+                    );
+                  });
+                }
+
               },
               child: Text('True',
               style: TextStyle(
@@ -103,15 +117,28 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 30.0),
             child: FlatButton(
               onPressed: (){
-                setState(() {
-                  queNo++;
-                  scoreKeeper.add(
-                    Icon(
-                      Icons.close,
-                      color: Colors.red,
-                    )
-                  );
-                });
+                if(ans[queNo]==false){
+                  setState(() {
+                    queNo++;
+                    scoreKeeper.add(
+                        Icon(
+                          Icons.close,
+                          color: Colors.red,
+                        )
+                    );
+                  });
+                }else{
+                  setState(() {
+                    queNo++;
+                    scoreKeeper.add(
+                        Icon(
+                          Icons.check,
+                          color: Colors.green,
+                        )
+                    );
+                  });
+                }
+
               },
               child: Text('False',
                 style: TextStyle(
