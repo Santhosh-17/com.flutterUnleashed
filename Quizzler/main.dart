@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quizzler/quiz_brain.dart';
+import 'questions.dart';
 
 void main() => runApp(Quizzler());
 
@@ -41,12 +43,7 @@ class QuizPage extends StatefulWidget {
 class _QuizPageState extends State<QuizPage> {
 
   List<Icon> scoreKeeper = [];
-  List<String> questions = [
-    'The Captain of India Cricket Team is Virat Kohli',
-    'England won the series against India in 2021',
-    'Washington Sundar once again missed his maiden century',
-  ];
-  List<bool> ans = [true,false,true];
+  QuizBrain quizBrain = QuizBrain();
   int queNo = 0;
   @override
   Widget build(BuildContext context) {
@@ -59,7 +56,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(10.0),
             child: Center(
                 child: Text(
-                  questions[queNo],
+                  quizBrain.questionBook[queNo].questionText,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 22.0,
@@ -77,7 +74,10 @@ class _QuizPageState extends State<QuizPage> {
             child: FlatButton(
               onPressed: (){
 
-                if(ans[queNo] == true){
+                bool crtAns = quizBrain.questionBook[queNo].questionAns;
+                print("QueNO: $queNo , userAns: $crtAns ");
+                if(crtAns == true){
+
                   setState(() {
                     queNo++;
                     scoreKeeper.add(
@@ -87,6 +87,7 @@ class _QuizPageState extends State<QuizPage> {
                         )
                     );
                   });
+
                 }else{
                   setState(() {
                     queNo++;
@@ -118,18 +119,11 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 30.0),
             child: FlatButton(
               onPressed: (){
-                
-                if(ans[queNo]==false){
-                  setState(() {
-                    queNo++;
-                    scoreKeeper.add(
-                        Icon(
-                          Icons.close,
-                          color: Colors.red,
-                        )
-                    );
-                  });
-                }else{
+
+                bool crtAns = quizBrain.questionBook[queNo].questionAns;
+                print("QueNO: $queNo , userAns: $crtAns ");
+                if(crtAns == false){
+
                   setState(() {
                     queNo++;
                     scoreKeeper.add(
@@ -139,6 +133,20 @@ class _QuizPageState extends State<QuizPage> {
                         )
                     );
                   });
+
+                }else{
+
+
+                  setState(() {
+                    queNo++;
+                    scoreKeeper.add(
+                        Icon(
+                          Icons.close,
+                          color: Colors.red,
+                        )
+                    );
+                  });
+
                 }
 
               },
@@ -153,6 +161,7 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
         ),
+        
         Row(
           children: scoreKeeper,
         ),
