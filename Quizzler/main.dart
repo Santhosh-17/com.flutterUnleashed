@@ -76,6 +76,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 15.0),
             child: FlatButton(
               onPressed: (){
+
                 if(ans[queNo] == true){
                   setState(() {
                     queNo++;
@@ -117,6 +118,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 30.0),
             child: FlatButton(
               onPressed: (){
+                
                 if(ans[queNo]==false){
                   setState(() {
                     queNo++;
