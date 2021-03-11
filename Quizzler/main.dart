@@ -44,7 +44,6 @@ class _QuizPageState extends State<QuizPage> {
 
   List<Icon> scoreKeeper = [];
   QuizBrain quizBrain = QuizBrain();
-  int queNo = 0;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -56,7 +55,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: const EdgeInsets.all(10.0),
             child: Center(
                 child: Text(
-                  quizBrain.getQuestionText(queNo),
+                  quizBrain.getQuestionText(),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 22.0,
@@ -74,12 +73,12 @@ class _QuizPageState extends State<QuizPage> {
             child: FlatButton(
               onPressed: (){
 
-                bool crtAns = quizBrain.getAnswer(queNo);
-                print("QueNO: $queNo , userAns: $crtAns ");
+                bool crtAns = quizBrain.getAnswer();
+
                 if(crtAns == true){
 
                   setState(() {
-                    queNo++;
+                    quizBrain.nextQuestion();
                     scoreKeeper.add(
                         Icon(
                           Icons.check,
@@ -90,7 +89,7 @@ class _QuizPageState extends State<QuizPage> {
 
                 }else{
                   setState(() {
-                    queNo++;
+                    quizBrain.nextQuestion();
                     scoreKeeper.add(
                         Icon(
                           Icons.close,
@@ -120,12 +119,12 @@ class _QuizPageState extends State<QuizPage> {
             child: FlatButton(
               onPressed: (){
 
-                bool crtAns = quizBrain.getAnswer(queNo);
-                print("QueNO: $queNo , userAns: $crtAns ");
+                bool crtAns = quizBrain.getAnswer();
+
                 if(crtAns == false){
 
                   setState(() {
-                    queNo++;
+                    quizBrain.nextQuestion();
                     scoreKeeper.add(
                         Icon(
                           Icons.check,
@@ -137,7 +136,7 @@ class _QuizPageState extends State<QuizPage> {
                 }else{
 
                   setState(() {
-                    queNo++;
+                    quizBrain.nextQuestion();
                     scoreKeeper.add(
                         Icon(
                           Icons.close,

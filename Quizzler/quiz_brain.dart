@@ -1,7 +1,8 @@
 import 'questions.dart';
 class QuizBrain{
+  int _queNo = 0;
 
-  List<Questions> questionBook = [
+  List<Questions> _questionBook = [
     Questions('The Captain of India Cricket Team is Virat Kohli',true),
     Questions('England won the series against India in 2021',false),
     Questions('Washington Sundar once again missed his maiden century',true),
@@ -32,5 +33,19 @@ class QuizBrain{
         true),
   ];
 
+  void nextQuestion(){
+    if(_queNo < _questionBook.length - 1){
+      _queNo ++;
+    }
+
+  }
+
+  String getQuestionText( ){
+    return _questionBook[_queNo].questionText;
+  }
+
+  bool getAnswer( ){
+    return _questionBook[_queNo].questionAns;
+  }
 
 }
