@@ -51,12 +51,12 @@ class _QuizPageState extends State<QuizPage> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Expanded(
-          flex: 7,
+          flex: 5,
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Center(
                 child: Text(
-                  quizBrain.questionBook[queNo].questionText,
+                  quizBrain.getQuestionText(queNo),
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 22.0,
@@ -74,7 +74,7 @@ class _QuizPageState extends State<QuizPage> {
             child: FlatButton(
               onPressed: (){
 
-                bool crtAns = quizBrain.questionBook[queNo].questionAns;
+                bool crtAns = quizBrain.getAnswer(queNo);
                 print("QueNO: $queNo , userAns: $crtAns ");
                 if(crtAns == true){
 
@@ -120,7 +120,7 @@ class _QuizPageState extends State<QuizPage> {
             child: FlatButton(
               onPressed: (){
 
-                bool crtAns = quizBrain.questionBook[queNo].questionAns;
+                bool crtAns = quizBrain.getAnswer(queNo);
                 print("QueNO: $queNo , userAns: $crtAns ");
                 if(crtAns == false){
 
@@ -135,7 +135,6 @@ class _QuizPageState extends State<QuizPage> {
                   });
 
                 }else{
-
 
                   setState(() {
                     queNo++;
@@ -161,7 +160,7 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
         ),
-        
+
         Row(
           children: scoreKeeper,
         ),
