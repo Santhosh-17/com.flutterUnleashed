@@ -13,12 +13,6 @@ class QuizBrain{
     Questions('Buzz Aldrin\'s mother\'s maiden name was \"Moon\".', true),
     Questions('It is illegal to pee in the Ocean in Portugal.', true),
     Questions(
-        'No piece of square dry paper can be folded in half more than 7 times.',
-        false),
-    Questions(
-        'In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.',
-        true),
-    Questions(
         'The loudest sound produced by any animal is 188 decibels. That animal is the African Elephant.',
         false),
     Questions(
@@ -46,6 +40,19 @@ class QuizBrain{
 
   bool getAnswer( ){
     return _questionBook[_queNo].questionAns;
+  }
+
+  bool isFinished(){
+    if(_queNo >= _questionBook.length - 1){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+
+  void reset(){
+    _queNo = 0;
   }
 
 }
