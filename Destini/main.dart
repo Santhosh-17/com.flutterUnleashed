@@ -53,27 +53,23 @@ class _StoryPageState extends State<StoryPage> {
 
               Expanded(
                 flex: 2,
-                child:Visibility(
-                  visible: storyBrain.buttonShouldBeVisible(),
-                  // ignore: deprecated_member_use
-                  child: FlatButton(
-                      onPressed: () {
+                child:FlatButton(
+                    onPressed: () {
 
-                       setState(() {
-                         storyBrain.nextStory(1);
-                       });
+                     setState(() {
+                       storyBrain.nextStory(1);
+                     });
 
-                      },
-                    color: Colors.red,
-                      child: Text(
-                        storyBrain.getChoice1(),
-                        style: TextStyle(
-                            fontSize: 20.0,
-                            color: Colors.white
-                        ),
+                    },
+                  color: Colors.red,
+                    child: Text(
+                      storyBrain.getChoice1(),
+                      style: TextStyle(
+                          fontSize: 20.0,
+                          color: Colors.white
                       ),
                     ),
-                ),
+                  ),
               ),
               SizedBox(
                 height: 20.0,
