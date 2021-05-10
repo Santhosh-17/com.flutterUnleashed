@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:newsapp/pages/viewpage.dart';
 import 'package:newsapp/services/api_manager.dart';
 import 'package:flutter_html/flutter_html.dart';
 class HomePage extends StatefulWidget {
@@ -73,6 +74,12 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: ListTile(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => ViewPage(article)
+                    )
+                  );
+                },
                 leading: Card(
                   clipBehavior: Clip.antiAlias,
                   // shape: RoundedRectangleBorder(
