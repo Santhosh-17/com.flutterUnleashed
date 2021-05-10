@@ -16,7 +16,7 @@ class _ViewPageState extends State<ViewPage> {
       appBar: AppBar(
         title: Text("NewsApp"),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
